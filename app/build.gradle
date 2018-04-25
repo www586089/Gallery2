@@ -4,7 +4,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.android.gallery3d2"
+        applicationId "com.android.gallery3d"
         minSdkVersion 18
         targetSdkVersion 25
         renderscriptTargetApi 18

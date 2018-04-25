@@ -248,7 +248,7 @@
 
         <provider
             android:name="com.android.gallery3d.filtershow.provider.SharedImageProvider"
-            android:authorities="com.android.gallery3d.filtershow.provider.SharedImageProvider"
+            android:authorities="com.android.gallery3d.filtershow.provider.SharedImageProvider2"
             android:grantUriPermissions="true"
             android:readPermission="com.android.gallery3d.filtershow.permission.READ"
             android:writePermission="com.android.gallery3d.filtershow.permission.WRITE" />

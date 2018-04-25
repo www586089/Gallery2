@@ -35,7 +35,7 @@ public class SharedImageProvider extends ContentProvider {
     private static final String LOGTAG = "SharedImageProvider";
 
     public static final String MIME_TYPE = "image/jpeg";
-    public static final String AUTHORITY = "com.android.gallery3d.filtershow.provider.SharedImageProvider";
+    public static final String AUTHORITY = "com.android.gallery3d.filtershow.provider.SharedImageProvider2";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/image");
     public static final String PREPARE = "prepare";
 
