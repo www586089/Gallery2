@@ -134,11 +134,9 @@ public class ActionModeHandler implements Callback, PopupList.OnPopupItemClickLi
     public void startActionMode() {
         Activity a = mActivity;
         mActionMode = a.startActionMode(this);
-        View customView = LayoutInflater.from(a).inflate(
-                R.layout.action_mode, null);
+        View customView = LayoutInflater.from(a).inflate(R.layout.action_mode, null);
         mActionMode.setCustomView(customView);
-        mSelectionMenu = new SelectionMenu(a,
-                (Button) customView.findViewById(R.id.selection_menu), this);
+        mSelectionMenu = new SelectionMenu(a, (Button) customView.findViewById(R.id.selection_menu), this);
         updateSelectionMenu();
     }
 

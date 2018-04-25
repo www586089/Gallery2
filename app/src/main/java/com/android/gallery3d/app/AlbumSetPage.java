@@ -199,8 +199,7 @@ public class AlbumSetPage extends ActivityState implements
             // Show pressed-up animation for the single-tap.
             mAlbumSetView.setPressedIndex(slotIndex);
             mAlbumSetView.setPressedUp();
-            mHandler.sendMessageDelayed(mHandler.obtainMessage(MSG_PICK_ALBUM, slotIndex, 0),
-                    FadeTexture.DURATION);
+            mHandler.sendMessageDelayed(mHandler.obtainMessage(MSG_PICK_ALBUM, slotIndex, 0), FadeTexture.DURATION);
         }
     }
 
@@ -279,8 +278,7 @@ public class AlbumSetPage extends ActivityState implements
             // We only show cluster menu in the first AlbumPage in stack
             boolean inAlbum = mActivity.getStateManager().hasStateClass(AlbumPage.class);
             data.putBoolean(AlbumPage.KEY_SHOW_CLUSTER_MENU, !inAlbum);
-            mActivity.getStateManager().startStateForResult(
-                    AlbumPage.class, REQUEST_DO_ANIMATION, data);
+            mActivity.getStateManager().startStateForResult(AlbumPage.class, REQUEST_DO_ANIMATION, data);
         }
     }
 
@@ -531,8 +529,7 @@ public class AlbumSetPage extends ActivityState implements
 
         if (mGetContent) {
             inflater.inflate(R.menu.pickup, menu);
-            int typeBits = mData.getInt(
-                    GalleryActivity.KEY_TYPE_BITS, DataManager.INCLUDE_IMAGE);
+            int typeBits = mData.getInt(GalleryActivity.KEY_TYPE_BITS, DataManager.INCLUDE_IMAGE);
             mActionBar.setTitle(GalleryUtils.getSelectionModePrompt(typeBits));
         } else  if (mGetAlbum) {
             inflater.inflate(R.menu.pickup, menu);
@@ -541,11 +538,9 @@ public class AlbumSetPage extends ActivityState implements
             inflater.inflate(R.menu.albumset, menu);
             boolean wasShowingClusterMenu = mShowClusterMenu;
             mShowClusterMenu = !inAlbum;
-            boolean selectAlbums = !inAlbum &&
-                    mActionBar.getClusterTypeAction() == FilterUtils.CLUSTER_BY_ALBUM;
+            boolean selectAlbums = !inAlbum && mActionBar.getClusterTypeAction() == FilterUtils.CLUSTER_BY_ALBUM;
             MenuItem selectItem = menu.findItem(R.id.action_select);
-            selectItem.setTitle(activity.getString(
-                    selectAlbums ? R.string.select_album : R.string.select_group));
+            selectItem.setTitle(activity.getString(selectAlbums ? R.string.select_album : R.string.select_group));
 
             MenuItem cameraItem = menu.findItem(R.id.action_camera);
             cameraItem.setVisible(GalleryUtils.isCameraAvailable(activity));
