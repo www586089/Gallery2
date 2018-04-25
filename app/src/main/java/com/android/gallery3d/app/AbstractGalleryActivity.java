@@ -65,7 +65,9 @@ public class AbstractGalleryActivity extends Activity implements GalleryContext 
     private BroadcastReceiver mMountReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (getExternalCacheDir() != null) onStorageReady();
+            if (getExternalCacheDir() != null) {
+                onStorageReady();
+            }
         }
     };
     private IntentFilter mMountFilter = new IntentFilter(Intent.ACTION_MEDIA_MOUNTED);

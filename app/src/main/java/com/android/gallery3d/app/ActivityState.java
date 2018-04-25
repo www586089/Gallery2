@@ -129,7 +129,7 @@ abstract public class ActivityState {
     protected void clearStateResult() {
     }
 
-    BroadcastReceiver mPowerIntentReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver mPowerIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();

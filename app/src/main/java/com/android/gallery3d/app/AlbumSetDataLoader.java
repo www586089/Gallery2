@@ -312,8 +312,7 @@ public class AlbumSetDataLoader {
 
     private <T> T executeAndWait(Callable<T> callable) {
         FutureTask<T> task = new FutureTask<T>(callable);
-        mMainHandler.sendMessage(
-                mMainHandler.obtainMessage(MSG_RUN_OBJECT, task));
+        mMainHandler.sendMessage(mMainHandler.obtainMessage(MSG_RUN_OBJECT, task));
         try {
             return task.get();
         } catch (InterruptedException e) {
