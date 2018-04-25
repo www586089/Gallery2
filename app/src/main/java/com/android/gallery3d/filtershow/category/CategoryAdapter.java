@@ -53,7 +53,9 @@ public class CategoryAdapter extends ArrayAdapter<Action> {
     public void clear() {
         for (int i = 0; i < getCount(); i++) {
             Action action = getItem(i);
-            action.clearBitmap();
+            if (action != null) {
+                action.clearBitmap();
+            }
         }
         super.clear();
     }

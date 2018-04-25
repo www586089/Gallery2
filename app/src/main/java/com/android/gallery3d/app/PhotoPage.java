@@ -258,7 +258,7 @@ public abstract class PhotoPage extends ActivityState implements
         mPhotoView = new PhotoView(mActivity);
         mPhotoView.setListener(this);
         mRootPane.addComponent(mPhotoView);
-        mApplication = (GalleryApp) ((Activity) mActivity).getApplication();
+        mApplication = (GalleryApp) mActivity.getApplication();
         mOrientationManager = mActivity.getOrientationManager();
         mActivity.getGLRoot().setOrientationSource(mOrientationManager);
 
@@ -534,14 +534,11 @@ public abstract class PhotoPage extends ActivityState implements
         }
 
         ((GLRootView) mActivity.getGLRoot()).setOnSystemUiVisibilityChangeListener(
-                new View.OnSystemUiVisibilityChangeListener() {
-                @Override
-                    public void onSystemUiVisibilityChange(int visibility) {
-                        int diff = mLastSystemUiVis ^ visibility;
-                        mLastSystemUiVis = visibility;
-                        if ((diff & View.SYSTEM_UI_FLAG_FULLSCREEN) != 0 && (visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
-                            showBars();
-                        }
+                visibility -> {
+                    int diff = mLastSystemUiVis ^ visibility;
+                    mLastSystemUiVis = visibility;
+                    if ((diff & View.SYSTEM_UI_FLAG_FULLSCREEN) != 0 && (visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                        showBars();
                     }
                 });
     }
@@ -605,12 +602,7 @@ public abstract class PhotoPage extends ActivityState implements
         NfcAdapter adapter = NfcAdapter.getDefaultAdapter(mActivity);
         if (adapter != null) {
             adapter.setBeamPushUris(null, mActivity);
-            adapter.setBeamPushUrisCallback(new CreateBeamUrisCallback() {
-                @Override
-                public Uri[] createBeamUris(NfcEvent event) {
-                    return mNfcPushUris;
-                }
-            }, mActivity);
+            adapter.setBeamPushUrisCallback(event -> mNfcPushUris, mActivity);
         }
     }
 

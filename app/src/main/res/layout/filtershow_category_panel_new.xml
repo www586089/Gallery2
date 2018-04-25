@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2013 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,33 +15,32 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.schemas.android.com/apk/res/com.android.gallery3d"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@color/filtershow_categoryview_background">
+    xmlns:custom="http://schemas.schemas.android.com/apk/res/com.android.gallery3d"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/filtershow_categoryview_background"
+    android:orientation="horizontal">
 
     <HorizontalScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scrollbars="none" >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="none">
 
         <com.android.gallery3d.filtershow.category.CategoryTrack
-                android:id="@+id/listItems"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/category_panel_height"
-                custom:iconSize="@dimen/category_panel_icon_size"
-                android:divider="@android:color/transparent"
-                android:dividerPadding="8dip"
-                />
+            android:id="@+id/listItems"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/category_panel_height"
+            android:divider="@android:color/transparent"
+            android:dividerPadding="8dip"
+            custom:iconSize="@dimen/category_panel_icon_size" />
 
     </HorizontalScrollView>
 
     <com.android.gallery3d.filtershow.category.IconView
-            android:id="@+id/addButton"
-            android:layout_width="@dimen/category_panel_height"
-            android:layout_height="@dimen/category_panel_height"
-            android:src="@drawable/filtershow_add"/>
+        android:id="@+id/addButton"
+        android:layout_width="@dimen/category_panel_height"
+        android:layout_height="@dimen/category_panel_height"
+        android:src="@drawable/filtershow_add" />
 
 </LinearLayout>

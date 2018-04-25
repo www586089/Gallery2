@@ -35,7 +35,6 @@ public class LruCache<K, V> {
     @SuppressWarnings("serial")
     public LruCache(final int capacity) {
         mLruMap = new LinkedHashMap<K, V>(16, 0.75f, true) {
-            @Override
             protected boolean removeEldestEntry(Entry<K, V> eldest) {
                 return size() > capacity;
             }
