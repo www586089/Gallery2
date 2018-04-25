@@ -43,8 +43,7 @@ public abstract class AbstractSlotRenderer implements SlotView.SlotRenderer {
         mFrameSelected = new NinePatchTexture(context, R.drawable.grid_selected);
     }
 
-    protected void drawContent(GLCanvas canvas,
-            Texture content, int width, int height, int rotation) {
+    protected void drawContent(GLCanvas canvas, Texture content, int width, int height, int rotation) {
         canvas.save(GLCanvas.SAVE_FLAG_MATRIX);
 
         // The content is always rendered in to the largest square that fits

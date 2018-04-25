@@ -655,8 +655,7 @@ public class SlotView extends GLView {
         }
 
         @Override
-        public boolean onFling(MotionEvent e1,
-                MotionEvent e2, float velocityX, float velocityY) {
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             cancelDown(false);
             int scrollLimit = mLayout.getScrollLimit();
             if (scrollLimit == 0) return false;
@@ -668,12 +667,10 @@ public class SlotView extends GLView {
         }
 
         @Override
-        public boolean onScroll(MotionEvent e1,
-                MotionEvent e2, float distanceX, float distanceY) {
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             cancelDown(false);
             float distance = WIDE ? distanceX : distanceY;
-            int overDistance = mScroller.startScroll(
-                    Math.round(distance), 0, mLayout.getScrollLimit());
+            int overDistance = mScroller.startScroll(Math.round(distance), 0, mLayout.getScrollLimit());
             if (mOverscrollEffect == OVERSCROLL_3D && overDistance != 0) {
                 mPaper.overScroll(overDistance);
             }

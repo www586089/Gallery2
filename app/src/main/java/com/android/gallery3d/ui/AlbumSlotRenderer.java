@@ -118,8 +118,7 @@ public class AlbumSlotRenderer extends AbstractSlotRenderer {
             entry.content = content;
         }
         drawContent(canvas, content, width, height, entry.rotation);
-        if ((content instanceof FadeInTexture) &&
-                ((FadeInTexture) content).isAnimating()) {
+        if ((content instanceof FadeInTexture) && ((FadeInTexture) content).isAnimating()) {
             renderRequestFlags |= SlotView.RENDER_MORE_FRAME;
         }
 

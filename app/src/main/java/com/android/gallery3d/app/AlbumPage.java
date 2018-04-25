@@ -260,8 +260,7 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
             // Render transition in pressed state
             mAlbumView.setPressedIndex(slotIndex);
             mAlbumView.setPressedUp();
-            mHandler.sendMessageDelayed(mHandler.obtainMessage(MSG_PICK_PHOTO, slotIndex, 0),
-                    FadeTexture.DURATION);
+            mHandler.sendMessageDelayed(mHandler.obtainMessage(MSG_PICK_PHOTO, slotIndex, 0), FadeTexture.DURATION);
         }
     }
 
@@ -307,8 +306,7 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
             if (startInFilmstrip) {
                 mActivity.getStateManager().switchState(this, FilmstripPage.class, data);
             } else {
-                mActivity.getStateManager().startStateForResult(
-                            SinglePhotoPage.class, REQUEST_PHOTO, data);
+                mActivity.getStateManager().startStateForResult(SinglePhotoPage.class, REQUEST_PHOTO, data);
             }
         }
     }
@@ -470,8 +468,7 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
         mSelectionManager.setSelectionListener(this);
         Config.AlbumPage config = Config.AlbumPage.get(mActivity);
         mSlotView = new SlotView(mActivity, config.slotViewSpec);
-        mAlbumView = new AlbumSlotRenderer(mActivity, mSlotView,
-                mSelectionManager, config.placeholderColor);
+        mAlbumView = new AlbumSlotRenderer(mActivity, mSlotView, mSelectionManager, config.placeholderColor);
         mSlotView.setSlotRenderer(mAlbumView);
         mRootPane.addComponent(mSlotView);
         mSlotView.setListener(new SlotView.SimpleListener() {
