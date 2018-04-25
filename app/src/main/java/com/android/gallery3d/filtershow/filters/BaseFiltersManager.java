@@ -39,9 +39,9 @@ public abstract class BaseFiltersManager implements FiltersManagerInterface {
     private static int mImageBorderSize = 4; // in percent
 
     protected void init() {
-        mFilters = new HashMap<Class, ImageFilter>();
-        mRepresentationLookup = new HashMap<String, FilterRepresentation>();
-        Vector<Class> filters = new Vector<Class>();
+        mFilters = new HashMap<>();
+        mRepresentationLookup = new HashMap<>();
+        Vector<Class> filters = new Vector<>();
         addFilterClasses(filters);
         for (Class filterClass : filters) {
             try {

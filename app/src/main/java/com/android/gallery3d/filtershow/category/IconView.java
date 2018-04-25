@@ -16,6 +16,7 @@
 
 package com.android.gallery3d.filtershow.category;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -167,6 +168,7 @@ public class IconView extends View {
         return mBitmapBounds;
     }
 
+    @SuppressLint("GetContentDescriptionOverride")
     @Override
     public CharSequence getContentDescription () {
         return mText;

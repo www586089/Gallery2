@@ -28,8 +28,7 @@ public class UpdatePreviewTask extends ProcessingTask {
     private boolean mPipelineIsOn = false;
 
     public UpdatePreviewTask() {
-        mPreviewPipeline = new CachingPipeline(
-                FiltersManager.getPreviewManager(), "Preview");
+        mPreviewPipeline = new CachingPipeline(FiltersManager.getPreviewManager(), "Preview");
     }
 
     public void setOriginal(Bitmap bitmap) {

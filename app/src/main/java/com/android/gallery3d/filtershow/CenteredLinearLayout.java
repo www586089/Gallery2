@@ -32,6 +32,7 @@ public class CenteredLinearLayout extends LinearLayout {
         super(context, attrs);
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CenteredLinearLayout);
         mMaxWidth = a.getDimensionPixelSize(R.styleable.CenteredLinearLayout_max_width, 0);
+        a.recycle();
     }
 
     @Override

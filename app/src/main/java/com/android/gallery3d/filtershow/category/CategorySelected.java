@@ -24,8 +24,7 @@ public class CategorySelected extends View {
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.argb(128, 128, 128, 128));
-        canvas.drawCircle(getWidth()/2, getHeight()/2,
-                getWidth()/2 - mMargin, mPaint);
+        canvas.drawCircle(getWidth() / 2, getHeight() / 2, getWidth() / 2 - mMargin, mPaint);
     }
 
 }

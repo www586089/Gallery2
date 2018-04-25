@@ -710,7 +710,7 @@ public class ImagePreset {
         return true;
     }
 
-    FilterRepresentation creatFilterFromName(String name) {
+    private FilterRepresentation creatFilterFromName(String name) {
         if (FilterRotateRepresentation.SERIALIZATION_NAME.equals(name)) {
             return new FilterRotateRepresentation();
         } else if (FilterMirrorRepresentation.SERIALIZATION_NAME.equals(name)) {

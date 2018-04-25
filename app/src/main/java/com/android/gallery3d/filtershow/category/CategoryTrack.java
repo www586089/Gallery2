@@ -50,7 +50,7 @@ public class CategoryTrack extends LinearLayout {
     public CategoryTrack(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CategoryTrack);
-        mElemSize = a.getDimensionPixelSize(R.styleable.CategoryTrack_iconSize, 180);
+        mElemSize = a.getDimensionPixelSize(R.styleable.CategoryTrack_iconSize, 210);
         a.recycle();
     }
 

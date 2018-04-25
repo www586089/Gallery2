@@ -21,6 +21,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.util.Log;
+import android.util.SparseArray;
 
 import java.util.HashMap;
 
@@ -31,7 +32,7 @@ public class ProcessingTaskController implements Handler.Callback {
     private HandlerThread mHandlerThread = null;
     private Handler mProcessingHandler = null;
     private int mCurrentType;
-    private HashMap<Integer, ProcessingTask> mTasks = new HashMap<Integer, ProcessingTask>();
+    private SparseArray<ProcessingTask> mTasks = new SparseArray<>();
 
     public final static int RESULT = 1;
     public final static int UPDATE = 2;

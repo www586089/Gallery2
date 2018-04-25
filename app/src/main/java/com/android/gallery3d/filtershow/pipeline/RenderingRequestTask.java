@@ -37,8 +37,7 @@ public class RenderingRequestTask extends ProcessingTask {
     }
 
     public RenderingRequestTask() {
-        mPreviewPipeline = new CachingPipeline(
-                FiltersManager.getManager(), "Normal");
+        mPreviewPipeline = new CachingPipeline(FiltersManager.getManager(), "Normal");
     }
 
     public void setOriginal(Bitmap bitmap) {

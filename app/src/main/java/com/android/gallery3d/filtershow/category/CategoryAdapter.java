@@ -17,6 +17,7 @@
 package com.android.gallery3d.filtershow.category;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -35,12 +36,12 @@ public class CategoryAdapter extends ArrayAdapter<Action> {
     private View mContainer;
     private int mItemWidth = ListView.LayoutParams.MATCH_PARENT;
     private int mSelectedPosition;
-    int mCategory;
+    private int mCategory;
     private int mOrientation;
     private boolean mShowAddButton = false;
     private String mAddButtonText;
 
-    public CategoryAdapter(Context context, int textViewResourceId) {
+    private CategoryAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
         mItemHeight = (int) (context.getResources().getDisplayMetrics().density * 100);
     }
@@ -89,8 +90,9 @@ public class CategoryAdapter extends ArrayAdapter<Action> {
         }
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
             convertView = new CategoryView(getContext());
         }

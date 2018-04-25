@@ -64,7 +64,7 @@ public class XmpPresets {
             is = context.getContentResolver().openInputStream(srcUri);
             xmpMeta = XmpUtilHelper.extractXMPMeta(is);
         } catch (FileNotFoundException e) {
-
+            e.printStackTrace();
         } finally {
             Utils.closeSilently(is);
         }
@@ -87,8 +87,7 @@ public class XmpPresets {
         }
     }
 
-    public static XMresults extractXMPData(
-            Context context, MasterImage mMasterImage, Uri uriToEdit) {
+    public static XMresults extractXMPData(Context context, MasterImage mMasterImage, Uri uriToEdit) {
         XMresults ret = new XMresults();
 
         InputStream is = null;
@@ -97,6 +96,7 @@ public class XmpPresets {
             is = context.getContentResolver().openInputStream(uriToEdit);
             xmpMeta = XmpUtilHelper.extractXMPMeta(is);
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } finally {
             Utils.closeSilently(is);
         }
@@ -106,12 +106,10 @@ public class XmpPresets {
         }
 
         try {
-            String strSrcUri = xmpMeta.getPropertyString(XMP_GOOGLE_FILTER_NAMESPACE,
-                    XMP_SRC_FILE_URI);
+            String strSrcUri = xmpMeta.getPropertyString(XMP_GOOGLE_FILTER_NAMESPACE, XMP_SRC_FILE_URI);
 
             if (strSrcUri != null) {
-                String filterString = xmpMeta.getPropertyString(XMP_GOOGLE_FILTER_NAMESPACE,
-                        XMP_FILTERSTACK);
+                String filterString = xmpMeta.getPropertyString(XMP_GOOGLE_FILTER_NAMESPACE, XMP_FILTERSTACK);
 
                 Uri srcUri = Uri.parse(strSrcUri);
                 ret.originalimage = srcUri;

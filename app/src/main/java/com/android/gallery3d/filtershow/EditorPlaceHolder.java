@@ -1,5 +1,6 @@
 package com.android.gallery3d.filtershow;
 
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
@@ -15,7 +16,7 @@ public class EditorPlaceHolder {
 
     private FilterShowActivity mActivity = null;
     private FrameLayout mContainer = null;
-    private HashMap<Integer, Editor> mEditors = new HashMap<Integer, Editor>();
+    private SparseArray<Editor> mEditors = new SparseArray<>();
     private Vector<ImageShow> mOldViews = new Vector<ImageShow>();
 
     public EditorPlaceHolder(FilterShowActivity activity) {
@@ -31,10 +32,7 @@ public class EditorPlaceHolder {
     }
 
     public boolean contains(int type) {
-        if (mEditors.get(type) != null) {
-            return true;
-        }
-        return false;
+        return mEditors.get(type) != null;
     }
 
     public Editor showEditor(int type) {

@@ -41,8 +41,7 @@ public class HighresRenderingRequestTask extends ProcessingTask {
     }
 
     public HighresRenderingRequestTask() {
-        mHighresPreviewPipeline = new CachingPipeline(
-                FiltersManager.getHighresManager(), "Highres");
+        mHighresPreviewPipeline = new CachingPipeline(FiltersManager.getHighresManager(), "Highres");
     }
 
     public void setOriginal(Bitmap bitmap) {

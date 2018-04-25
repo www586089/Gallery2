@@ -1346,8 +1346,7 @@ public class FilterShowActivity extends FragmentActivity implements OnItemClickL
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-            long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mMasterImage.onHistoryItemClick(position);
         invalidateViews();
     }
@@ -1356,8 +1355,7 @@ public class FilterShowActivity extends FragmentActivity implements OnItemClickL
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, getString(R.string.select_image)),
-                SELECT_PICTURE);
+        startActivityForResult(Intent.createChooser(intent, getString(R.string.select_image)), SELECT_PICTURE);
     }
 
     @Override
@@ -1394,10 +1392,10 @@ public class FilterShowActivity extends FragmentActivity implements OnItemClickL
     }
 
     private void extractXMPData() {
-        XMresults res = XmpPresets.extractXMPData(
-                getBaseContext(), mMasterImage, getIntent().getData());
-        if (res == null)
+        XMresults res = XmpPresets.extractXMPData(getBaseContext(), mMasterImage, getIntent().getData());
+        if (res == null) {
             return;
+        }
 
         mOriginalImageUri = res.originalimage;
         mOriginalPreset = res.preset;
@@ -1408,14 +1406,12 @@ public class FilterShowActivity extends FragmentActivity implements OnItemClickL
     }
 
     public void setHandlesSwipeForView(View view, float startX, float startY) {
-        if (view != null) {
-            mHandlingSwipeButton = true;
-        } else {
-            mHandlingSwipeButton = false;
-        }
+        mHandlingSwipeButton = view != null;
         mHandledSwipeView = view;
         int[] location = new int[2];
-        view.getLocationInWindow(location);
+        if (view != null) {
+            view.getLocationInWindow(location);
+        }
         mSwipeStartX = location[0] + startX;
         mSwipeStartY = location[1] + startY;
     }
